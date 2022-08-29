@@ -4,7 +4,7 @@ import Button from './Button'
 //onDoubleClick is not working
 const Task = ({task,onDelete,onToggle}) => {
   return (
-    <div className="task"  onClickCapture={()=>onToggle(task.id)}>
+    <div className={`task ${task.reminder?'reminder':''}`}  onClickCapture={()=>onToggle(task.id)}>
         <div className="header">
         <h3>
             {task.text} 
