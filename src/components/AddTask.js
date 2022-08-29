@@ -12,6 +12,10 @@ const AddTask = ({onAdd}) => {
             return
         }
         onAdd({text,day,reminder})
+
+        setDate('')
+        setReminder(false)
+        setReminder('')
     }
   return (
     <form className='add-form' onSubmit={onSubmit}>
