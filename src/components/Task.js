@@ -1,6 +1,6 @@
-import React from 'react'
+import {useState} from 'react'
 
-const tasks=[
+const defaultTasks=[
     {
         id:1,
         text:"Professor Consultation",
@@ -21,6 +21,7 @@ const tasks=[
     }
 ]
 const Task = () => {
+    const [tasks,setTasks]=useState(defaultTasks)
   return (
     <>
     {tasks.map((task)=>(
