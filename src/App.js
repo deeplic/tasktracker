@@ -4,7 +4,7 @@ function App() {
   //can write javascript here
   return (
     <div className="container">
-      <Header></Header>
+      <Header title={1}></Header>
     </div>
   );
 }
