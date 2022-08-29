@@ -2,6 +2,9 @@ import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import {useState,useEffect} from 'react'
 import AddTask from "./components/AddTask";
+import Footer from "./components/Footer";
+import About from "./components/About";
+import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom'
 
 function App() {
   //can write javascript here
@@ -74,16 +77,26 @@ const toggleForm=()=>{
   setShowAddTask(!showAddTask)
 }
   return (
-    <div className="container">
+    <Router>
+     <div className="container">
       <Header onShowForm={toggleForm} showAdd={showAddTask}/>
-      {showAddTask?
+      
+        <Routes>
+        <Route path="/" element={<>
+          {showAddTask?
       <AddTask onAdd={addTask}/>:''}
       
       {tasks.length>0?
         <Tasks tasks={tasks} onDelete={deleteTask} 
         onToggle={toggleReminder}/>
         :'No task to show'}
+        </>}/>
+        <Route path='/about' element={<About/>}/>
+        </Routes>
+        <Footer/>
     </div>
+    </Router>
+    
   );
 }
 
