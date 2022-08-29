@@ -4,13 +4,25 @@
       "id": 1,
       "text": "Professor Consultation",
       "day": "Feb 5th at 9:30am",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 2,
       "text": "Attend Lecture",
       "day": "Feb 5th at 12:30pm",
-      "reminder": true
+      "reminder": false
+    },
+    {
+      "text": "Uber task",
+      "day": "Tuesday",
+      "reminder": true,
+      "id": 3
+    },
+    {
+      "text": "Do laundy",
+      "day": "Monday",
+      "reminder": true,
+      "id": 4
     }
   ]
 }
