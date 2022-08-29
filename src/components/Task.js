@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
 
-const Task = ({task,onDelete}) => {
+//onDoubleClick is not working
+const Task = ({task,onDelete,onToggle}) => {
   return (
-    <div className="task">
+    <div className="task"  onClickCapture={()=>onToggle(task.id)}>
         <div className="header">
         <h3>
             {task.text} 
@@ -11,7 +12,7 @@ const Task = ({task,onDelete}) => {
         <Button text='x' color='red' onClick={()=>onDelete(task.id)}/>
         </div>
         
-        <p>{task.day}</p>
+        <p >{task.day}</p>
     </div>
   )
 }
