@@ -52,7 +52,7 @@ const toggleForm=()=>{
 }
   return (
     <div className="container">
-      <Header onShowForm={toggleForm}/>
+      <Header onShowForm={toggleForm} showAdd={showAddTask}/>
       {showAddTask?
       <AddTask onAdd={addTask}/>:''}
       
