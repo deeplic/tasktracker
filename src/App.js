@@ -22,13 +22,15 @@ function App() {
     return data;
   }
 //Deleete task
-const deleteTask=(id)=>{
-  console.log('delete',id)
+const deleteTask=async (id)=>{
+  await fetch(`http://localhost:5000/tasks/${id}`,{
+    method:'DELETE'
+  })
   setTasks(tasks.filter((task)=>task.id!==id))
 }
 
 //Toogle reminder
-const toggleReminder=(id)=>{
+const toggleReminder= (id)=>{
   setTasks(tasks.map(task=>
     task.id===id?{...task,reminder:!task.reminder}:task))
 }
